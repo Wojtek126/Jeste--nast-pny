@@ -1,41 +1,120 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jesteś Następny - Zakład Pogrzebowy</title>
-  <style>
-    /* Reset i podstawowe style */
-    * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
-    body { line-height:1.6; background:#f5f5f5; color:#333; }
-    a { text-decoration:none; color:#333; }
-    header { background:#222; color:#fff; padding:20px 10px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; }
-    header img { height:50px; }
-    nav a { margin:0 10px; padding:5px 10px; transition:0.3s; }
-    nav a:hover { background:#444; border-radius:5px; }
-    h1,h2,h3 { margin-bottom:10px; }
-    section { padding:40px 10px; background:#fff; margin-bottom:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1); }
-    ul { list-style:none; padding-left:0; }
-    ul li { margin-bottom:8px; }
-    table { width:100%; border-collapse:collapse; margin-top:10px; }
-    table, th, td { border:1px solid #ccc; }
-    th, td { padding:10px; text-align:left; }
-    #gallery { display:flex; gap:10px; flex-wrap:wrap; }
-    #gallery img { width:calc(33% - 10px); border-radius:5px; object-fit:cover; height:150px; }
-    form input, form textarea { width:100%; padding:8px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; }
-    form button { background:#222; color:#fff; padding:10px 20px; border:none; border-radius:5px; cursor:pointer; }
-    form button:hover { background:#444; }
-    #testimonial-controls button { margin-right:5px; padding:5px 10px; border:none; background:#ddd; border-radius:5px; cursor:pointer; }
-    #testimonial-controls button.active { background:#222; color:#fff; }
-    @media(max-width:768px) { #gallery img { width:100%; } header { flex-direction:column; align-items:flex-start; } nav { margin-top:10px; } }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zakład Pogrzebowy Jesteś Następny</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  header {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  header img {
+    height: 50px;
+  }
+  nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  nav a:hover {
+    color: #555;
+  }
+  section {
+    padding: 50px 20px;
+    max-width: 1000px;
+    margin: auto;
+  }
+  h1, h2, h3 {
+    color: #222;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  ul li {
+    margin-bottom: 10px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+  }
+  table, th, td {
+    border: 1px solid #ccc;
+  }
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
+  #testimonials blockquote {
+    font-style: italic;
+    margin: 0 0 5px;
+  }
+  #testimonial-controls button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  #gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  #gallery img {
+    width: calc(33% - 10px);
+    border-radius: 5px;
+    object-fit: cover;
+  }
+  form input, form textarea, form button {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  form button {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  form button:hover {
+    background-color: #666;
+  }
+  @media(max-width:768px){
+    #gallery img {
+      width: calc(50% - 10px);
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+</style>
 </head>
 <body>
 
 <header>
-  <img src="logo.png" alt="Logo Zakład Pogrzebowy Jesteś Następny" />
-  <h1>Jesteś Następny</h1>
-  <p>Zakład Pogrzebowy • Private Limited Company (有限公司)</p>
+  <div>
+    <img src="logo.png" alt="Logo Zakład Pogrzebowy Jesteś Następny">
+    <h1>Jesteś Następny</h1>
+  </div>
   <nav>
     <a href="#o-nas">O nas</a>
     <a href="#dlaczego-my">Dlaczego my?</a>
@@ -77,7 +156,6 @@
 
 <section id="cennik">
   <h2>Cennik</h2>
-  <p>Ceny usług są elastyczne i dostosowane do potrzeb oraz budżetu klienta. Oferujemy trzy główne pakiety:</p>
   <table>
     <thead>
       <tr>
@@ -87,37 +165,17 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Pakiet Podstawowy</td>
-        <td>Transport, kremacja, urna, formalności</td>
-        <td>15,000 – 20,000</td>
-      </tr>
-      <tr>
-        <td>Pakiet Standardowy</td>
-        <td>+ ceremonia, kwiaty, kaplica, oprawa</td>
-        <td>25,000 – 40,000</td>
-      </tr>
-      <tr>
-        <td>Pakiet Premium</td>
-        <td>+ trumna, relacja online, indywidualna oprawa</td>
-        <td>45,000 – 70,000</td>
-      </tr>
-      <tr>
-        <td>Transport międzynarodowy</td>
-        <td>Zależny od kraju i trasy</td>
-        <td>od 20,000 wzwyż</td>
-      </tr>
-      <tr>
-        <td>Usługi dodatkowe</td>
-        <td>Wieńce, zdjęcia, video, konsjerż pogrzebowy</td>
-        <td>500 – 10,000</td>
-      </tr>
+      <tr><td>Pakiet Podstawowy</td><td>Transport, kremacja, urna, formalności</td><td>15,000 – 20,000</td></tr>
+      <tr><td>Pakiet Standardowy</td><td>+ ceremonia, kwiaty, kaplica, oprawa</td><td>25,000 – 40,000</td></tr>
+      <tr><td>Pakiet Premium</td><td>+ trumna, relacja online, indywidualna oprawa</td><td>45,000 – 70,000</td></tr>
+      <tr><td>Transport międzynarodowy</td><td>Zależny od kraju i trasy</td><td>od 20,000 wzwyż</td></tr>
+      <tr><td>Usługi dodatkowe</td><td>Wieńce, zdjęcia, video, konsjerż pogrzebowy</td><td>500 – 10,000</td></tr>
     </tbody>
   </table>
 </section>
 
 <section id="faq">
-  <h2>FAQ – Najczęściej zadawane pytania</h2>
+  <h2>FAQ</h2>
   <dl>
     <dt>Czy możecie odebrać ciało z domu opieki?</dt>
     <dd>Tak, współpracujemy z wieloma domami opieki, zapewniając transport i formalności.</dd>
@@ -136,7 +194,7 @@
     <blockquote id="testimonial-text">"Profesjonalna i pełna empatii obsługa w trudnych chwilach."</blockquote>
     <cite id="testimonial-author">– Anna K.</cite>
     <div id="testimonial-controls">
-      <button data-index="0" class="active">1</button>
+      <button data-index="0">1</button>
       <button data-index="1">2</button>
       <button data-index="2">3</button>
     </div>
@@ -146,79 +204,56 @@
 <section id="galeria">
   <h2>Galeria</h2>
   <div id="gallery">
-    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Kwiaty" />
-    <img src="https://images.unsplash.com/photo-1517686469429-6a14a9e0c9f6?auto=format&fit=crop&w=800&q=80" alt="Ceremonia" />
-    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Wieniec" />
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Kwiaty">
+    <img src="https://images.unsplash.com/photo-1517686469429-6a14a9e0c9f6?auto=format&fit=crop&w=800&q=80" alt="Ceremonia">
+    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Wieniec">
   </div>
 </section>
 
 <section id="kontakt">
   <h2>Kontakt</h2>
-  <p>
-    <strong>Adres:</strong> No. 77 Tai Tong Road, Yuen Long, New Territories, Hongkong<br />
-    <strong>Telefon:</strong> +48 123 456 789<br />
-    <strong>E-mail:</strong> <a href="mailto:chatgpd2.0@gmail.com">chatgpd2.0@gmail.com</a>
-  </p>
-
+  <p><strong>Adres:</strong> No. 77 Tai Tong Road, Yuen Long, New Territories, Hongkong<br>
+     <strong>Telefon:</strong> +48 123 456 789<br>
+     <strong>E-mail:</strong> <a href="mailto:chatgpd2.0@gmail.com">chatgpd2.0@gmail.com</a></p>
   <h3>Formularz kontaktowy</h3>
   <form id="contact-form">
-    <label for="name">Imię i nazwisko:</label>
-    <input type="text" id="name" name="name" required />
-
-    <label for="email">Adres e-mail:</label>
-    <input type="email" id="email" name="email" required />
-
-    <label for="message">Wiadomość:</label>
-    <textarea id="message" name="message" rows="5" required></textarea>
-
+    <input type="text" id="name" name="name" placeholder="Imię i nazwisko" required>
+    <input type="email" id="email" name="email" placeholder="Adres e-mail" required>
+    <textarea id="message" name="message" rows="5" placeholder="Wiadomość" required></textarea>
     <button type="submit">Wyślij</button>
   </form>
   <p id="form-feedback" style="margin-top:15px; color:#8ac6ff;"></p>
-
   <h3>Nasza lokalizacja</h3>
   <div style="width:100%; height:300px; margin-top:20px;">
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.239688136649!2d114.02652787581082!3d22.44578967956103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3403f9369e9f45b3%3A0x75c2698e11743e2b!2sTai%20Tong%20Rd%2C%20Yuen%20Long%2C%20Hong%20Kong!5e0!3m2!1spl!2spl!4v1689988888888!5m2!1spl!2spl"
-      width="100%"
-      height="100%"
-      style="border:0;"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-    ></iframe>
+      width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 </section>
 
 <script>
-  // Testimonial JS
-  const testimonials = [
-    { text: "Profesjonalna i pełna empatii obsługa w trudnych chwilach.", author: "Anna K." },
-    { text: "Dzięki nim wszystko przebiegło sprawnie i bez stresu.", author: "Jan M." },
-    { text: "Polecam każdemu, kto szuka rzetelnej obsługi pogrzebowej.", author: "Maria L." }
-  ];
-
-  const testimonialText = document.getElementById('testimonial-text');
-  const testimonialAuthor = document.getElementById('testimonial-author');
-  const buttons = document.querySelectorAll('#testimonial-controls button');
-
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const index = btn.dataset.index;
-      testimonialText.textContent = testimonials[index].text;
-      testimonialAuthor.textContent = "– " + testimonials[index].author;
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    });
+const testimonials = [
+  { text: '"Profesjonalna i pełna empatii obsługa w trudnych chwilach."', author: '– Anna K.' },
+  { text: '"Doskonałe wsparcie i pomoc w każdej sytuacji."', author: '– Piotr M.' },
+  { text: '"Szybka organizacja pogrzebu i piękne ceremonie."', author: '– Maria S.' }
+];
+const testimonialText = document.getElementById('testimonial-text');
+const testimonialAuthor = document.getElementById('testimonial-author');
+document.querySelectorAll('#testimonial-controls button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const i = btn.dataset.index;
+    testimonialText.textContent = testimonials[i].text;
+    testimonialAuthor.textContent = testimonials[i].author;
   });
+});
 
-  // Formularz JS
-  const form = document.getElementById('contact-form');
-  const feedback = document.getElementById('form-feedback');
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    feedback.textContent = "Dziękujemy za wiadomość! Skontaktujemy się wkrótce.";
-    form.reset();
-  });
+// Formularz – przykładowa obsługa
+document.getElementById('contact-form').addEventListener('submit', e => {
+  e.preventDefault();
+  document.getElementById('form-feedback').textContent = 'Dziękujemy! Twoja wiadomość została wysłana.';
+  e.target.reset();
+});
 </script>
 
 </body>
